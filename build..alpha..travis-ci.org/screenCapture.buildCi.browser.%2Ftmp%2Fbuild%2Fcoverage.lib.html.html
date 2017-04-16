@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-grunt-contrib-cssmin/grunt-contrib-cssmin/tasks/cssmin.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-grunt-contrib-cssmin/node_modules/grunt-contrib-cssmin/tasks/cssmin.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-grunt-contrib-cssmin">npmtest-grunt-contrib-cssmin (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-grunt-contrib-cssmin/grunt-contrib-cssmin/tasks/cssmin.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-grunt-contrib-cssmin/node_modules/grunt-contrib-cssmin/tasks/cssmin.js</span></h1>
     <h2>
         
         Statements: <span class="metric">12% <small>(6 / 50)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-grunt-contrib-cssmin/grunt-contrib-cssmin/tasks/</a> &#187; cssmin.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> » <a href="index.html">node-npmtest-grunt-contrib-cssmin/node_modules/grunt-contrib-cssmin/tasks/</a> » cssmin.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -414,99 +412,100 @@ var CleanCSS = require('clean-css');
 var chalk = require('chalk');
 var maxmin = require('maxmin');
 &nbsp;
-module.exports = <span class="fstat-no" title="function not covered" >function (grunt) {</span>
-<span class="cstat-no" title="statement not covered" >  var getAvailableFiles = <span class="fstat-no" title="function not covered" >function (filesArray) {</span></span>
-<span class="cstat-no" title="statement not covered" >    return filesArray.filter(<span class="fstat-no" title="function not covered" >function (filepath) {</span></span>
-<span class="cstat-no" title="statement not covered" >      if (!grunt.file.exists(filepath)) {</span>
-<span class="cstat-no" title="statement not covered" >        grunt.log.warn('Source file ' + chalk.cyan(filepath) + ' not found');</span>
-<span class="cstat-no" title="statement not covered" >        return false;</span>
+module.exports = <span class="fstat-no" title="function not covered">function (grunt) {</span>
+<span class="cstat-no" title="statement not covered">  var getAvailableFiles = <span class="fstat-no" title="function not covered">function (filesArray) {</span></span>
+<span class="cstat-no" title="statement not covered">    return filesArray.filter(<span class="fstat-no" title="function not covered">function (filepath) {</span></span>
+<span class="cstat-no" title="statement not covered">      if (!grunt.file.exists(filepath)) {</span>
+<span class="cstat-no" title="statement not covered">        grunt.log.warn('Source file ' + chalk.cyan(filepath) + ' not found');</span>
+<span class="cstat-no" title="statement not covered">        return false;</span>
       }
-<span class="cstat-no" title="statement not covered" >      return true;</span>
+<span class="cstat-no" title="statement not covered">      return true;</span>
     });
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  grunt.registerMultiTask('cssmin', 'Minify CSS', <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >    var created = {</span>
+<span class="cstat-no" title="statement not covered">  grunt.registerMultiTask('cssmin', 'Minify CSS', <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">    var created = {</span>
       maps: 0,
       files: 0
     };
-<span class="cstat-no" title="statement not covered" >    var size = {</span>
+<span class="cstat-no" title="statement not covered">    var size = {</span>
       before: 0,
       after: 0
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    this.files.forEach(<span class="fstat-no" title="function not covered" >function (file) {</span></span>
-<span class="cstat-no" title="statement not covered" >      var options = this.options({</span>
+<span class="cstat-no" title="statement not covered">    this.files.forEach(<span class="fstat-no" title="function not covered">function (file) {</span></span>
+<span class="cstat-no" title="statement not covered">      var options = this.options({</span>
         rebase: false,
         report: 'min',
         sourceMap: false
       });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      var availableFiles = getAvailableFiles(file.src);</span>
-<span class="cstat-no" title="statement not covered" >      var compiled = '';</span>
+<span class="cstat-no" title="statement not covered">      var availableFiles = getAvailableFiles(file.src);</span>
+<span class="cstat-no" title="statement not covered">      var compiled = '';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      options.target = file.dest;</span>
-<span class="cstat-no" title="statement not covered" >      options.relativeTo = path.dirname(availableFiles[0] || '');</span>
+<span class="cstat-no" title="statement not covered">      options.target = file.dest;</span>
+<span class="cstat-no" title="statement not covered">      options.relativeTo = path.dirname(availableFiles[0] || '');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      try {</span>
-<span class="cstat-no" title="statement not covered" >        compiled = new CleanCSS(options).minify(availableFiles);</span>
+<span class="cstat-no" title="statement not covered">      try {</span>
+<span class="cstat-no" title="statement not covered">        compiled = new CleanCSS(options).minify(availableFiles);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (compiled.errors.length) {</span>
-<span class="cstat-no" title="statement not covered" >          grunt.warn(compiled.errors.toString());</span>
-<span class="cstat-no" title="statement not covered" >          return;</span>
+<span class="cstat-no" title="statement not covered">        if (compiled.errors.length) {</span>
+<span class="cstat-no" title="statement not covered">          grunt.warn(compiled.errors.toString());</span>
+<span class="cstat-no" title="statement not covered">          return;</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (compiled.warnings.length) {</span>
-<span class="cstat-no" title="statement not covered" >          grunt.log.error(compiled.warnings.toString());</span>
+<span class="cstat-no" title="statement not covered">        if (compiled.warnings.length) {</span>
+<span class="cstat-no" title="statement not covered">          grunt.log.error(compiled.warnings.toString());</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (options.debug) {</span>
-<span class="cstat-no" title="statement not covered" >          grunt.log.writeln(util.format(compiled.stats));</span>
+<span class="cstat-no" title="statement not covered">        if (options.debug) {</span>
+<span class="cstat-no" title="statement not covered">          grunt.log.writeln(util.format(compiled.stats));</span>
         }
       } catch (err) {
-<span class="cstat-no" title="statement not covered" >        grunt.log.error(err);</span>
-<span class="cstat-no" title="statement not covered" >        grunt.warn('CSS minification failed at ' + availableFiles + '.');</span>
+<span class="cstat-no" title="statement not covered">        grunt.log.error(err);</span>
+<span class="cstat-no" title="statement not covered">        grunt.warn('CSS minification failed at ' + availableFiles + '.');</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      var compiledCssString = compiled.styles;</span>
+<span class="cstat-no" title="statement not covered">      var compiledCssString = compiled.styles;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      var unCompiledCssString = availableFiles.map(<span class="fstat-no" title="function not covered" >function (file) {</span></span>
-<span class="cstat-no" title="statement not covered" >        return grunt.file.read(file);</span>
+<span class="cstat-no" title="statement not covered">      var unCompiledCssString = availableFiles.map(<span class="fstat-no" title="function not covered">function (file) {</span></span>
+<span class="cstat-no" title="statement not covered">        return grunt.file.read(file);</span>
       }).join('');
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      size.before += unCompiledCssString.length;</span>
+<span class="cstat-no" title="statement not covered">      size.before += unCompiledCssString.length;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (options.sourceMap) {</span>
-<span class="cstat-no" title="statement not covered" >        compiledCssString += '\n' + '/*# sourceMappingURL=' + path.basename(file.dest) + '.map */';</span>
-<span class="cstat-no" title="statement not covered" >        grunt.file.write(file.dest + '.map', compiled.sourceMap.toString());</span>
-<span class="cstat-no" title="statement not covered" >        created.maps++;</span>
-<span class="cstat-no" title="statement not covered" >        grunt.verbose.writeln('File ' + chalk.cyan(file.dest + '.map') + ' created');</span>
+<span class="cstat-no" title="statement not covered">      if (options.sourceMap) {</span>
+<span class="cstat-no" title="statement not covered">        compiledCssString += '\n' + '/*# sourceMappingURL=' + path.basename(file.dest) + '.map */';</span>
+<span class="cstat-no" title="statement not covered">        grunt.file.write(file.dest + '.map', compiled.sourceMap.toString());</span>
+<span class="cstat-no" title="statement not covered">        created.maps++;</span>
+<span class="cstat-no" title="statement not covered">        grunt.verbose.writeln('File ' + chalk.cyan(file.dest + '.map') + ' created');</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      grunt.file.write(file.dest, compiledCssString);</span>
-<span class="cstat-no" title="statement not covered" >      created.files++;</span>
-<span class="cstat-no" title="statement not covered" >      size.after += compiledCssString.length;</span>
-<span class="cstat-no" title="statement not covered" >      grunt.verbose.writeln('File ' + chalk.cyan(file.dest) + ' created ' + chalk.dim(maxmin(unCompiledCssString, compiledCssString, options.report === 'gzip')));</span>
+<span class="cstat-no" title="statement not covered">      grunt.file.write(file.dest, compiledCssString);</span>
+<span class="cstat-no" title="statement not covered">      created.files++;</span>
+<span class="cstat-no" title="statement not covered">      size.after += compiledCssString.length;</span>
+<span class="cstat-no" title="statement not covered">      grunt.verbose.writeln('File ' + chalk.cyan(file.dest) + ' created ' + chalk.dim(maxmin(unCompiledCssString, compiledCssString, options.report === 'gzip')));</span>
 &nbsp;
     }, this);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (created.maps &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >      grunt.log.ok(created.maps + ' source' + grunt.util.pluralize(this.files.length, 'map/maps') + ' created.');</span>
+<span class="cstat-no" title="statement not covered">    if (created.maps &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">      grunt.log.ok(created.maps + ' source' + grunt.util.pluralize(this.files.length, 'map/maps') + ' created.');</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (created.files &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >      grunt.log.ok(created.files + ' ' + grunt.util.pluralize(this.files.length, 'file/files') + ' created. ' + chalk.dim(maxmin(size.before, size.after)));</span>
+<span class="cstat-no" title="statement not covered">    if (created.files &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">      grunt.log.ok(created.files + ' ' + grunt.util.pluralize(this.files.length, 'file/files') + ' created. ' + chalk.dim(maxmin(size.before, size.after)));</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      grunt.log.warn('No files created.');</span>
+<span class="cstat-no" title="statement not covered">      grunt.log.warn('No files created.');</span>
     }
   });
 };
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 07:31:39 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Sun Apr 16 2017 08:14:29 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
